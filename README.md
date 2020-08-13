@@ -5,7 +5,9 @@ If you are looking for a library to use on the browser, please try [customvision
 
 ## Install
 ```sh
-npm install @microsoft/customvision-tfjs-node
+# npm install @microsoft/customvision-tfjs-node
+git clone https://github.com/microsoft/customvision-tfjs-node.git
+cd customvision-tfjs-node && npm install .
 ```
 
 ## Usage
