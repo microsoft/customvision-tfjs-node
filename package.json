@@ -1,0 +1,43 @@
+{
+  "name": "@microsoft/customvision-tfjs-node",
+  "version": "1.0.0",
+  "description": "Node.js library for Tensorflow.js models exported from customvision.ai",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
+  "files": [
+    "lib/index.js"
+  ],
+  "babel": {
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ],
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": [
+            ">0.1%"
+          ]
+        }
+      ]
+    ]
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.3",
+    "@tensorflow/tfjs-node": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/customvision-tfjs-node.git"
+  }
+}

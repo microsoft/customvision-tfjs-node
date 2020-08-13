@@ -1,3 +1,62 @@
+# customvision-tfjs-node
+Node.js package for TensorFlow.js models exported from Custom Vision Service
+
+If you are looking for a library to use on the browser, please try [customvision-tfjs](https://github.com/microsoft/customvision-tfjs).
+
+## Install
+```sh
+npm install @microsoft/customvision-tfjs-node
+```
+
+## Usage
+
+### Classification
+```js
+const cvstfjs = require('@microsoft/customvision-tfjs-node');
+
+async function executeAsync(image_filepath) {
+  const model = new cvstfjs.ClassificationModel();
+  await model.loadModelAsync('file://model.json');
+  fs.readFile(image_filepath, function (err, data) {
+    if (err) {
+      throw err;
+    }
+
+    const result = await model.executeAsync(data);
+    console.log(result);
+  }
+}
+```
+
+The result is a 1D-array of probabilities.
+
+### Object Detection
+```js
+const cvstfjs = require('@microsoft/customvision-tfjs-node');
+
+async function executeAsync(image_filepath) {
+  const model = new cvstfjs.ObjectDetectionModel();
+  await model.loadModelAsync('file://model.json');
+  fs.readFile(image_filepath, function (err, data) {
+    if (err) {
+      throw err;
+    }
+
+    const result = await model.executeAsync(data);
+    console.log(result);
+  }
+}
+```
+
+The result has 3 arrays.
+```js
+
+[
+	[[0.1, 0.3, 0.4, 0.3], [0.2, 0.4, 0.8, 0.9]], // bounding boxes (x1, y1, x2, y2)
+	[0.2, 0.3], // probabilities
+	[1, 4] // class ids
+]
+```
 
 # Contributing
 
