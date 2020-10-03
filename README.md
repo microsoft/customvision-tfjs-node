@@ -24,7 +24,7 @@ async function executeAsync(image_filepath) {
 
     const result = await model.executeAsync(data);
     console.log(result);
-  }
+  })
 }
 ```
 
@@ -44,7 +44,7 @@ async function executeAsync(image_filepath) {
 
     const result = await model.executeAsync(data);
     console.log(result);
-  }
+  })
 }
 ```
 
